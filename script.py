@@ -31,13 +31,13 @@ def first_pass( commands ):
         elif c == 'basename':
             basename = command['args'][0]
             basename_present = True
-        if vary_present and not frames_present:
-            print("vary present but not frames")
-            exit(1)
-        elif frames_present and not basename_present:
-            basename = 'default'
-            print("basename not found, set as default")
-        return basename, num_frames
+    if vary_present and not frames_present:
+        print("vary present but not frames")
+        exit(1)
+    elif frames_present and not basename_present:
+        basename = 'default'
+        print("basename not found, set as default")
+    return basename, num_frames
         
 
 """======== second_pass( commands ) ==========
